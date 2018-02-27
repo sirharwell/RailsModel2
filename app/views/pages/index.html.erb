@@ -1,0 +1,9 @@
+<h1> People </h1>
+<% @pages.each do |page| %>
+  <h5><%= page.name %></h5>
+  <%= link_to 'Show Full Details', page_path(page) %>
+
+<% end %>
+<p>
+  <%= link_to 'New Person', new_page_path %>
+</p>
