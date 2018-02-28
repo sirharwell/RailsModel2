@@ -19,6 +19,25 @@ class PagesController < ApplicationController
   else
     render :new
   end
+
+  def edit
+  @page = Page.find(params[:id])
+  end
+
+  def update
+  @page = Page.find(params[:id])
+
+  if @page.update(page_params)
+    redirect_to pages_path
+  else
+    render :edit
+  end
+end
+
+def destroy
+  Page.find(params[:id]).destroy
+  redirect_to pages_path
+end
 end
 
 private

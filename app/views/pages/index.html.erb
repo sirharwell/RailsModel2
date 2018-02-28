@@ -2,6 +2,8 @@
 <% @pages.each do |page| %>
   <h5><%= page.name %></h5>
   <%= link_to 'Show Full Details', page_path(page) %>
+  <!-- <%= link_to 'Edit Person', edit_page_path(page) %> -->
+  <%= link_to 'Delete Person', page, method: :delete %>
 
 <% end %>
 <p>
